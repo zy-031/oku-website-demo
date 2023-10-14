@@ -34,7 +34,6 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     setProvider(provider)
     const network = await provider.getNetwork()
-
     const dappazon = new ethers.Contract(config[network.chainId].dappazon.address, Dappazon, provider)
     setDappazon(dappazon)
 
@@ -61,8 +60,6 @@ function App() {
   return (
     <div>
       <Navigation account={account} setAccount={setAccount} />
-
-      <h2>Dappazon Best Sellers</h2>
 
       {electronics && clothing && toys && (
         <>
